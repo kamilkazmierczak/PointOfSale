@@ -3,11 +3,11 @@ package com.kamilkazmierczak;
 import com.kamilkazmierczak.DAO.BO.BarCode;
 import com.kamilkazmierczak.DAO.BO.Product;
 import com.kamilkazmierczak.DAO.DAO;
+import com.kamilkazmierczak.Devices.Input.Scanner;
+import com.kamilkazmierczak.Devices.Output.Display;
+import com.kamilkazmierczak.Devices.Output.Printer;
+import com.kamilkazmierczak.Interfaces.IDAO;
 import com.kamilkazmierczak.Interfaces.IProduct;
-import com.kamilkazmierczak.Stubs.DataBase;
-
-import java.util.Iterator;
-import java.util.Map;
 
 public class Main {
 
@@ -27,8 +27,14 @@ public class Main {
         dao.addProduct(p3);
         dao.addProduct(p4);
 
+        Scanner scanner = new Scanner();
+        IProduct pr =  scanner.scanAndGetProduct(new BarCode(2));
 
-        System.out.println(dao.getProduct(new BarCode(2)).getName());
+        Printer lcd = new Printer("LG");
+        lcd.print("trolo");
+
+        //System.out.println(pr.getName());
+        //System.out.println(dao.getProduct(new BarCode(2)).getName());
 
 
 

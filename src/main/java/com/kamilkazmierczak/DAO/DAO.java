@@ -5,10 +5,7 @@ import com.kamilkazmierczak.DAO.BO.Product;
 import com.kamilkazmierczak.Interfaces.IBarCode;
 import com.kamilkazmierczak.Interfaces.IDAO;
 import com.kamilkazmierczak.Interfaces.IProduct;
-import com.kamilkazmierczak.Stubs.DataBase;
-
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
+import com.kamilkazmierczak.DataBase.DataBase;
 
 /**
  * Created by Kamil on 06.05.2017.

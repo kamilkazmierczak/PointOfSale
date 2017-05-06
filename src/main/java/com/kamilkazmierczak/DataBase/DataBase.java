@@ -1,15 +1,10 @@
-package com.kamilkazmierczak.Stubs;
+package com.kamilkazmierczak.DataBase;
 
-import com.kamilkazmierczak.DAO.BO.BarCode;
-import com.kamilkazmierczak.DAO.BO.Product;
 import com.kamilkazmierczak.Interfaces.IBarCode;
 import com.kamilkazmierczak.Interfaces.IProduct;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Created by Kamil on 06.05.2017.
