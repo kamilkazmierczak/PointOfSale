@@ -6,10 +6,14 @@ import com.kamilkazmierczak.Interfaces.IBarCode;
  * Created by Kamil on 06.05.2017.
  */
 public class BarCode implements IBarCode{
-    private long id;
+    private long code;
+
+    public BarCode(long code){
+        this.code = code;
+    }
 
     @Override
-    public long getId() {
-        return id;
+    public long getCode() {
+        return code;
     }
 }
