@@ -18,12 +18,6 @@ public class Product implements IProduct{
         this.barCode = barCode;
     }
 
-    public Product(String name, double price){
-        this.name = name;
-        this.price = price;
-        this.barCode = null;
-    }
-
     @Override
     public double getPrice() {
         return price;

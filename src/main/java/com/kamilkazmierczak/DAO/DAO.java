@@ -7,14 +7,14 @@ import com.kamilkazmierczak.Interfaces.IDAO;
 import com.kamilkazmierczak.Interfaces.IProduct;
 import com.kamilkazmierczak.Stubs.DataBase;
 
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Created by Kamil on 06.05.2017.
  */
-public class DAO implements IDAO{
+public class DAO implements IDAO {
 
-    private final static AtomicLong idCounter = new AtomicLong();
 
     @Override
     public Iterable<IProduct> getAllProducts() {
@@ -28,42 +28,27 @@ public class DAO implements IDAO{
 
     @Override
     public IBarCode createBarCode() {
-        return new BarCode(idCounter.incrementAndGet());
-    }
-
-    @Override
-    public IProduct createProduct(String name, double price, IBarCode barCode) {
-        return new Product(name,price,barCode);
+        return new BarCode();
     }
 
     @Override
     public IProduct createProduct(String name, double price) {
-        return new Product(name,price);
+        return new Product(name, price, createBarCode());
     }
 
     @Override
-    public IBarCode getFreeBarCode() {
-        return null;
+    public IProduct getProduct(IBarCode code) {
+        return DataBase.getInstance().getProductsDataSet().get(code);
     }
+
 
     @Override
     public boolean addProduct(IProduct product) {
-        if (product.getBarCode()!=null){
-            DataBase.getInstance().addProduct(product); //code duplicate
-        }else if(getFreeBarCode()!=null){
-            product.setBarCode(getFreeBarCode());
-            DataBase.getInstance().addProduct(product); //code duplicate
-        }else{
-            product.setBarCode(this.createBarCode());
-            DataBase.getInstance().addProduct(product); //code duplicate
-        }
+        DataBase.getInstance().addProduct(product);
 
         //TODO
-        return false;
+        return true;
     }
 
-    @Override
-    public boolean addBarCode(IBarCode barCode) {
-        return false;
-    }
+
 }

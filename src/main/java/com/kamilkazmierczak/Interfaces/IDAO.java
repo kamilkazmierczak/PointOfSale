@@ -10,11 +10,10 @@ public interface IDAO {
     Iterable<IBarCode> getAllBarCodes();
 
     IBarCode createBarCode();
-    IProduct createProduct(String name, double price, IBarCode barCode);
     IProduct createProduct(String name, double price);
 
-    IBarCode getFreeBarCode();
+    IProduct getProduct(IBarCode code);
+
 
     boolean addProduct(IProduct product);
-    boolean addBarCode(IBarCode barCode);
 }

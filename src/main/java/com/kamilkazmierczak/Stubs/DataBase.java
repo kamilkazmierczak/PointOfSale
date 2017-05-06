@@ -34,11 +34,8 @@ public class DataBase {
         return true;
     }
 
-    public boolean addBarCode(IBarCode barCode){
-        this.productsDataSet.put(barCode,null);
-        return true;
+    public Map<IBarCode,IProduct> getProductsDataSet(){
+        return productsDataSet;
     }
-
-
 
 }
