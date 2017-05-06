@@ -5,10 +5,14 @@ package com.kamilkazmierczak.Devices.Output;
  */
 public abstract class TextOutputDevice {
 
-    private String manufacturer;
+    private String manufacturer = "NoName";
 
     public TextOutputDevice(String manufacturer){
         this.manufacturer = manufacturer;
+    }
+
+    public TextOutputDevice(){
+
     }
 
     public String print(String data){

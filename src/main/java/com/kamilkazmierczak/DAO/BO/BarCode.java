@@ -20,6 +20,7 @@ public class BarCode implements IBarCode{
         this.code = code;
     }
 
+
     @Override
     public long getCode() {
         return code;

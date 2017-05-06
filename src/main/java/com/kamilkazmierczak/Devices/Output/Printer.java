@@ -8,4 +8,14 @@ public class Printer extends TextOutputDevice{
         super(manufacturer);
     }
 
+    public Printer(){
+
+    }
+
+    @Override
+    public String print(String data){
+        System.out.println("printer:"+data);
+        return "printer:"+data;
+    }
+
 }

@@ -4,23 +4,28 @@ import com.kamilkazmierczak.DAO.BO.BarCode;
 import com.kamilkazmierczak.DAO.BO.Product;
 import com.kamilkazmierczak.DAO.DAO;
 import com.kamilkazmierczak.Devices.Input.Scanner;
-import com.kamilkazmierczak.Devices.Output.Display;
 import com.kamilkazmierczak.Devices.Output.Printer;
-import com.kamilkazmierczak.Interfaces.IDAO;
+import com.kamilkazmierczak.Devices.PointOfSale;
+import com.kamilkazmierczak.Exceptions.ReceiptNotClosedException;
 import com.kamilkazmierczak.Interfaces.IProduct;
+import com.kamilkazmierczak.Interfaces.IReceipt;
+import com.kamilkazmierczak.Model.Receipt;
+
+import java.util.Iterator;
+import java.util.Map;
 
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
         System.out.println("Hi");
 
 
         DAO dao = new DAO();
-        IProduct p1 = dao.createProduct("A",1);
-        IProduct p2 = dao.createProduct("B",2);
-        IProduct p3 = dao.createProduct("C",3);
-        IProduct p4 = dao.createProduct("D",4);
+        IProduct p1 = dao.createProduct("A", 1);
+        IProduct p2 = dao.createProduct("B", 2);
+        IProduct p3 = dao.createProduct("C", 3);
+        IProduct p4 = dao.createProduct("D", 4);
 
         dao.addProduct(p1);
         dao.addProduct(p2);
@@ -28,14 +33,49 @@ public class Main {
         dao.addProduct(p4);
 
         Scanner scanner = new Scanner();
-        IProduct pr =  scanner.scanAndGetProduct(new BarCode(2));
+        IProduct pr = scanner.scanAndGetProduct(new BarCode(2));
 
-        Printer lcd = new Printer("LG");
-        lcd.print("trolo");
+        //Printer lcd = new Printer("LG");
+        //lcd.print("trolo");
 
         //System.out.println(pr.getName());
         //System.out.println(dao.getProduct(new BarCode(2)).getName());
 
+        PointOfSale pos = new PointOfSale();
+        pos.scan(new BarCode(2));
+        pos.scan(new BarCode(9));
+        pos.scan(null);
+
+        IReceipt receipt = new Receipt();
+        receipt.addProduct(p1);
+        receipt.addProduct(p2);
+        receipt.addProduct(p2);
+        receipt.addProduct(p2);
+        receipt.addProduct(p3);
+        receipt.addProduct(p4);
+        receipt.addProduct(p4);
+
+        receipt.closeReceipt();
+        try {
+            receipt.getTotalSum();
+        } catch (ReceiptNotClosedException e) {
+            e.printStackTrace();
+        }
+
+
+        Iterator it = receipt.getAllProducts().entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            Product prOb= (Product) pair.getKey();
+            System.out.println(prOb.getName() + " = " + pair.getValue());
+            it.remove(); // avoids a ConcurrentModificationException
+        }
+
+
+//        for (Integer value : receipt.getAllProducts().values()) {
+//            //Product ob = (Product) value;
+//            System.out.println(value);
+//        }
 
 
         //System.out.println(
