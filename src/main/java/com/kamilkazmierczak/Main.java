@@ -20,6 +20,8 @@ public class Main {
         // write your code here
         System.out.println("Hi");
 
+        //Printer hh = new Printer("LG");
+        //System.out.println(hh.getManufacturer());
 
         DAO dao = new DAO();
         IProduct p1 = dao.createProduct("A", 1.43);

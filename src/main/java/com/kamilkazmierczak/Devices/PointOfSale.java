@@ -66,9 +66,9 @@ public class PointOfSale implements IPointOfSale {
     public void inputText(String text) {
         if (text.equals("exit")) {
 
-            if (receipt == null || !isTransactionInProgress ){ //|| receipt.receiptIsOpen()
+            if (receipt == null || !isTransactionInProgress) { //|| receipt.receiptIsOpen()
                 display.print("Nothing to exit"); //TODO remove?
-            }else {
+            } else {
                 receipt.closeReceipt();
                 this.printReceipt(receipt);
                 this.endTransaction();
@@ -83,24 +83,23 @@ public class PointOfSale implements IPointOfSale {
 
         String textReceipt = "";
         while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
+            Map.Entry pair = (Map.Entry) it.next();
             Product product = (Product) pair.getKey();
-            textReceipt+=(product.getName()+" price:"+ product.getPrice()+ " Q= " + pair.getValue());
-            textReceipt+='\n';
-            //printer.print(product.getName()+" price:"+ product.getPrice()+ " Q= " + pair.getValue());
+            textReceipt += (product.getName() + " price:" + product.getPrice() + " Q= " + pair.getValue());
+            textReceipt += System.getProperty("line.separator");
             it.remove();
         }
 
-        double totalSum = 0;
+        double totalSum;
         try {
             totalSum = receipt.getTotalSum();
         } catch (ReceiptNotClosedException e) {
             display.print("Receipt must be closed to get Total Sum");
+            return;
         }
 
-        textReceipt+="Total: "+ totalSum;
-        textReceipt+='\n';
-        display.print("Total: "+ totalSum);
+        textReceipt += "Total: " + totalSum;
+        display.print("Total: " + totalSum);
         printer.print(textReceipt);
 
     }
