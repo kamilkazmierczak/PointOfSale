@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class Receipt implements IReceipt {
 
-    private long currentSum;
+    private double currentSum;
     private boolean isOpen;
     private Map<IProduct, Integer> products;
 
@@ -23,7 +23,7 @@ public class Receipt implements IReceipt {
     }
 
     @Override
-    public long getTotalSum() throws ReceiptNotClosedException {
+    public double getTotalSum() throws ReceiptNotClosedException {
         if (!isOpen)
             return currentSum;
         else throw new ReceiptNotClosedException();

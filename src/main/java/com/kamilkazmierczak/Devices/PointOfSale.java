@@ -91,7 +91,7 @@ public class PointOfSale implements IPointOfSale {
             it.remove();
         }
 
-        long totalSum = 0;
+        double totalSum = 0;
         try {
             totalSum = receipt.getTotalSum();
         } catch (ReceiptNotClosedException e) {
