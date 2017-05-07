@@ -12,4 +12,5 @@ public interface IReceipt {
     void addProduct(IProduct product);
     Map<IProduct, Integer> getAllProducts();
     void closeReceipt();
+    boolean isOpen();
 }

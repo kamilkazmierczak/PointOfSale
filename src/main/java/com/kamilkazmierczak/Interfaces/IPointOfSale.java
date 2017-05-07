@@ -7,4 +7,7 @@ public interface IPointOfSale {
     void beginTransaction(); //todo boolean?
     void endTransaction(); //todo boolean?
     void scan(IBarCode barCode);
+    void inputText(String text);
+    void printReceipt(IReceipt receipt);
+
 }

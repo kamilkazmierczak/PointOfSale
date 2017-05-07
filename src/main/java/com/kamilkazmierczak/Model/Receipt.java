@@ -31,12 +31,14 @@ public class Receipt implements IReceipt {
 
     @Override
     public void addProduct(IProduct product) {
-        if (products.get(product)==null){
-            products.put(product,1);
-        }else {
+        if (products.get(product) == null) {
+            products.put(product, 1);
+        } else {
             Integer oldQuantity = products.get(product);
             products.put(product, ++oldQuantity);
         }
+        System.out.println("wtf"+product.getPrice());
+        currentSum += product.getPrice();
 
     }
 
@@ -49,5 +51,10 @@ public class Receipt implements IReceipt {
     @Override
     public void closeReceipt() {
         isOpen = false;
+    }
+
+    @Override
+    public boolean isOpen() {
+        return isOpen;
     }
 }
