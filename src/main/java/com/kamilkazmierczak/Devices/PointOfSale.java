@@ -65,7 +65,6 @@ public class PointOfSale implements IPointOfSale {
     @Override
     public void inputText(String text) {
         if (text.equals("exit")) {
-
             if (receipt == null || !isTransactionInProgress) { //|| receipt.receiptIsOpen()
                 display.print("Nothing to exit"); //TODO remove?
             } else {
@@ -73,7 +72,6 @@ public class PointOfSale implements IPointOfSale {
                 this.printReceipt(receipt);
                 this.endTransaction();
             }
-
         }
     }
 
@@ -99,6 +97,7 @@ public class PointOfSale implements IPointOfSale {
         }
 
         textReceipt += "Total: " + totalSum;
+
         display.print("Total: " + totalSum);
         printer.print(textReceipt);
 

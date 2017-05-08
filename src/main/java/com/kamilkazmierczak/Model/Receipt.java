@@ -6,17 +6,20 @@ import com.kamilkazmierczak.Interfaces.IReceipt;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Created by Kamil on 07.05.2017.
  */
 public class Receipt implements IReceipt {
-
+    private final static AtomicLong idCounter = new AtomicLong();
+    private long id;
     private double currentSum;
     private boolean isOpen;
     private Map<IProduct, Integer> products;
 
     public Receipt() {
+        id = idCounter.incrementAndGet();
         currentSum = 0;
         isOpen = true;
         products = new HashMap<>();
@@ -37,9 +40,7 @@ public class Receipt implements IReceipt {
             Integer oldQuantity = products.get(product);
             products.put(product, ++oldQuantity);
         }
-        System.out.println("wtf"+product.getPrice());
         currentSum += product.getPrice();
-
     }
 
     @Override

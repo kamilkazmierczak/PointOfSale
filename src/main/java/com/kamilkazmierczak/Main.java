@@ -4,6 +4,7 @@ import com.kamilkazmierczak.DAO.BO.BarCode;
 import com.kamilkazmierczak.DAO.BO.Product;
 import com.kamilkazmierczak.DAO.DAO;
 import com.kamilkazmierczak.Devices.Input.Scanner;
+import com.kamilkazmierczak.Devices.Output.LCDDisplay;
 import com.kamilkazmierczak.Devices.Output.Printer;
 import com.kamilkazmierczak.Devices.PointOfSale;
 import com.kamilkazmierczak.Exceptions.ReceiptNotClosedException;
@@ -43,6 +44,18 @@ public class Main {
         pos.scan(new BarCode(9));
         pos.scan(null);
         pos.inputText("exit");
+
+        //System.out.println("________");
+
+        //LCDDisplay a = new LCDDisplay();
+//        BarCode a = new BarCode(1);
+//        BarCode b = new BarCode(2);
+//        BarCode c;
+//        a=null;
+//        c=a;
+//        System.out.println(a.getCode());
+//        System.out.println(b.getCode());
+//        System.out.println(c.getCode());
 
 
         //long a =1.3;
