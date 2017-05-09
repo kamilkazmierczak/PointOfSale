@@ -17,7 +17,6 @@ import static org.junit.Assert.*;
  */
 public class ScannerTest {
 
-    private LCDDisplay lcdDisplay= null;
     private IBarCode barcode1 = null;
     private IBarCode barcode2 = null;
     private IProduct product1 = null;

@@ -7,7 +7,9 @@ import com.kamilkazmierczak.Devices.Input.Scanner;
 import com.kamilkazmierczak.Devices.Output.LCDDisplay;
 import com.kamilkazmierczak.Devices.Output.Printer;
 import com.kamilkazmierczak.Devices.PointOfSale;
+import com.kamilkazmierczak.Exceptions.BarCodeAlreadyAssigned;
 import com.kamilkazmierczak.Exceptions.ReceiptNotClosedException;
+import com.kamilkazmierczak.Interfaces.IBarCode;
 import com.kamilkazmierczak.Interfaces.IProduct;
 import com.kamilkazmierczak.Interfaces.IReceipt;
 import com.kamilkazmierczak.Model.Receipt;
@@ -17,7 +19,7 @@ import java.util.Map;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // write your code here
         System.out.println("Hi");
 
@@ -30,13 +32,15 @@ public class Main {
         IProduct p3 = dao.createProduct("C", 3);
         IProduct p4 = dao.createProduct("D", 4);
 
+
         dao.addProduct(p1);
         dao.addProduct(p2);
         dao.addProduct(p3);
         dao.addProduct(p4);
 
+
         PointOfSale pos = new PointOfSale();
-        pos.beginTransaction();
+        //pos.beginTransaction();
         pos.scan(new BarCode(2));
         pos.scan(new BarCode(2));
         pos.scan(new BarCode(1));
@@ -45,6 +49,17 @@ public class Main {
         pos.scan(null);
         pos.inputText("exit");
 
+
+//        PointOfSale pointOfSale = new PointOfSale();
+//        DAO dao = new DAO();
+//        IProduct product1 = dao.createProduct("Product1", 1.43);
+//        IProduct product2 = dao.createProduct("Product2", 2.91);
+//        IBarCode barCode1 = product1.getBarCode();
+//        IBarCode barCode2 = product2.getBarCode();
+//        dao.addProduct(product1);
+//        dao.addProduct(product2);
+//
+//        pointOfSale.scan(barCode1);
 
 
 

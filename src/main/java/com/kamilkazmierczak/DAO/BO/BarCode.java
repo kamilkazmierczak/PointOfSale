@@ -15,11 +15,9 @@ public class BarCode implements IBarCode{
         this.code = idCounter.incrementAndGet();
     }
 
-    //to consider
     public BarCode(long code){
         this.code = code;
     }
-
 
     @Override
     public long getCode() {

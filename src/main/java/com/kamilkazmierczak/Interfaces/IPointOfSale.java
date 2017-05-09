@@ -9,5 +9,6 @@ public interface IPointOfSale {
     void scan(IBarCode barCode);
     void inputText(String text);
     void printReceipt(IReceipt receipt);
+    boolean isTransactionInProgress();
 
 }

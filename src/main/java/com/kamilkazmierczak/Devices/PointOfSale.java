@@ -31,12 +31,18 @@ public class PointOfSale implements IPointOfSale {
         isTransactionInProgress = false;
     }
 
+    public PointOfSale(Scanner scanner, Printer printer, LCDDisplay display) {
+        this.scanner = scanner;
+        this.printer = printer;
+        this.display = display;
+        isTransactionInProgress = false;
+    }
+
     @Override
     public void beginTransaction() {
         isTransactionInProgress = true;
         receipt = new Receipt();
     }
-
 
     @Override
     public void endTransaction() {
@@ -44,28 +50,27 @@ public class PointOfSale implements IPointOfSale {
     }
 
     public void scan(IBarCode barCode) {
-        if (isTransactionInProgress) {
-            if (barCode == null) {
-                display.print("Invalid bar-code");
-            } else {
-                IProduct product = scanner.scanAndGetProduct(barCode);
-                if (product != null) {
-                    display.print(product.getName() + ";" + product.getPrice());
-                    receipt.addProduct(product);
-                } else {
-                    display.print("Product not found");
-                }
-            }
-        } else {
-            display.print("Begin transaction to scan bar-code"); //TODO remove?
-        }
+        if (!isTransactionInProgress)
+            this.beginTransaction();
 
+        if (barCode == null) {
+            display.print("Invalid bar-code");
+        } else {
+            IProduct product = scanner.scanAndGetProduct(barCode);
+            if (product != null) {
+                display.print(product.getName() + ";" + product.getPrice());
+                receipt.addProduct(product);
+            } else {
+                display.print("Product not found");
+            }
+        }
     }
+
 
     @Override
     public void inputText(String text) {
         if (text.equals("exit")) {
-            if (receipt == null || !isTransactionInProgress) { //|| receipt.receiptIsOpen()
+            if (!isTransactionInProgress) {
                 display.print("Nothing to exit"); //TODO remove?
             } else {
                 receipt.closeReceipt();
@@ -101,6 +106,10 @@ public class PointOfSale implements IPointOfSale {
         display.print("Total: " + totalSum);
         printer.print(textReceipt);
 
+    }
+
+    public boolean isTransactionInProgress() {
+        return isTransactionInProgress;
     }
 
 }

@@ -2,6 +2,8 @@ package com.kamilkazmierczak.DAO;
 
 import com.kamilkazmierczak.DAO.BO.BarCode;
 import com.kamilkazmierczak.DAO.BO.Product;
+import com.kamilkazmierczak.Exceptions.BarCodeAlreadyAssigned;
+import com.kamilkazmierczak.Exceptions.ReceiptNotClosedException;
 import com.kamilkazmierczak.Interfaces.IBarCode;
 import com.kamilkazmierczak.Interfaces.IProduct;
 import org.junit.Before;
@@ -24,21 +26,28 @@ public class DAOTest {
     @Test
     public void ShouldCreateBarCode() throws Exception {
         IBarCode barCode = dao.createBarCode();
-        assertTrue( barCode instanceof BarCode);
+        assertTrue(barCode instanceof BarCode);
     }
 
     @Test
     public void ShouldCreateProduct() throws Exception {
         IProduct product = dao.createProduct("Product", 56.71);
-        assertTrue( product instanceof Product);
+        assertTrue(product instanceof Product);
     }
 
     @Test
-    public void ShouldGetProduct() throws Exception {
+    public void ShouldAddAndGetProduct() throws Exception {
+        dao.addProduct(new Product("Product", 23.1, new BarCode(77)));
+        dao.getProduct(new BarCode(77));
     }
 
-    @Test
-    public void ShouldAddProduct() throws Exception {
+    @Test(expected=BarCodeAlreadyAssigned.class)
+    public void ShouldNotAddProduct() throws Exception {
+        BarCode barCode = new BarCode();
+        Product product1 = new Product("Product1", 51.1, barCode);
+        Product product2 = new Product("Product2", 4.11, barCode);
+        dao.addProduct(product1);
+        dao.addProduct(product2);
     }
 
 }

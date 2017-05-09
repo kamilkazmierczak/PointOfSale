@@ -2,6 +2,7 @@ package com.kamilkazmierczak.DAO;
 
 import com.kamilkazmierczak.DAO.BO.BarCode;
 import com.kamilkazmierczak.DAO.BO.Product;
+import com.kamilkazmierczak.Exceptions.BarCodeAlreadyAssigned;
 import com.kamilkazmierczak.Interfaces.IBarCode;
 import com.kamilkazmierczak.Interfaces.IDAO;
 import com.kamilkazmierczak.Interfaces.IProduct;
@@ -27,14 +28,11 @@ public class DAO implements IDAO {
         return DataBase.getInstance().getProductsDataSet().get(code);
     }
 
-
     @Override
-    public void addProduct(IProduct product) {
-        //TODO if find barcode in database throw exception
-        DataBase.getInstance().addProduct(product);
-
-
+    public void addProduct(IProduct product) throws BarCodeAlreadyAssigned {
+        if (this.getProduct(product.getBarCode()) == null)
+            DataBase.getInstance().addProduct(product);
+        else throw new BarCodeAlreadyAssigned();
     }
-
 
 }
