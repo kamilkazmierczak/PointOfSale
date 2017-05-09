@@ -18,15 +18,12 @@ public class DataBase {
 
     private Map<IBarCode,IProduct> productsDataSet;
 
-
     private DataBase(){
         productsDataSet = new HashMap<>();
     }
 
-
-    public boolean addProduct(IProduct product){
+    public void addProduct(IProduct product){
         this.productsDataSet.put(product.getBarCode(),product);
-        return true;
     }
 
     public Map<IBarCode,IProduct> getProductsDataSet(){

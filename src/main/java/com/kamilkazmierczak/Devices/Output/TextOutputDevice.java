@@ -7,17 +7,24 @@ public abstract class TextOutputDevice {
 
     private String manufacturer = "NoName";
 
-    public TextOutputDevice(String manufacturer){
+    public TextOutputDevice(String manufacturer) {
         this.manufacturer = manufacturer;
     }
 
-    public TextOutputDevice(){
+    public TextOutputDevice() {
 
     }
 
-    public String print(String data){
+    public String print(String data) {
         System.out.println(data); //TODO to consider
         return data;
+    }
+
+    public String customizedPrint(String data, String type) {
+        String output = "---" + type + "---" + System.lineSeparator()
+                + data + System.lineSeparator();
+        System.out.println(output);
+        return output;
     }
 
     public String getManufacturer() {

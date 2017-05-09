@@ -12,17 +12,6 @@ import com.kamilkazmierczak.DataBase.DataBase;
  */
 public class DAO implements IDAO {
 
-
-    @Override
-    public Iterable<IProduct> getAllProducts() {
-        return null;
-    }
-
-    @Override
-    public Iterable<IBarCode> getAllBarCodes() {
-        return null;
-    }
-
     @Override
     public IBarCode createBarCode() {
         return new BarCode();
@@ -40,11 +29,11 @@ public class DAO implements IDAO {
 
 
     @Override
-    public boolean addProduct(IProduct product) {
+    public void addProduct(IProduct product) {
+        //TODO if find barcode in database throw exception
         DataBase.getInstance().addProduct(product);
 
-        //TODO
-        return true;
+
     }
 
 

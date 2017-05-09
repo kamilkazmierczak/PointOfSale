@@ -73,6 +73,13 @@ public class ReceiptTest {
     }
 
     @Test
+    public void ShouldSetProperId() throws Exception {
+        receipt = new Receipt();
+        Receipt receipt2 = new Receipt();
+        assertTrue(receipt.getId() < receipt2.getId());
+    }
+
+    @Test
     public void ShouldCloseReceipt() throws Exception {
         receipt.closeReceipt();
         assertFalse(receipt.isOpen());

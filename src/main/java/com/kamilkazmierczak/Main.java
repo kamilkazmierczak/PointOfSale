@@ -45,6 +45,9 @@ public class Main {
         pos.scan(null);
         pos.inputText("exit");
 
+
+
+
         //System.out.println("________");
 
         //LCDDisplay a = new LCDDisplay();
@@ -63,7 +66,6 @@ public class Main {
 
         //pos.beginTransaction();
         //pos.scan(new BarCode(2));
-
 
 
 //        Scanner scanner = new Scanner();

@@ -14,8 +14,11 @@ public class Printer extends TextOutputDevice{
 
     @Override
     public String print(String data){
-        System.out.println("printer:"+data);
-        return "printer:"+data;
+//        data = "---PRINTER---" + System.getProperty("line.separator")
+//                + data + System.getProperty("line.separator");
+//        System.out.println(data);
+//        return data;
+        return super.customizedPrint(data,"PRINTER");
     }
 
 }

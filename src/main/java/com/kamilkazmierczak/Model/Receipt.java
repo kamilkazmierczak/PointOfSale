@@ -25,6 +25,10 @@ public class Receipt implements IReceipt {
         products = new HashMap<>();
     }
 
+    public long getId() {
+        return id;
+    }
+
     @Override
     public double getTotalSum() throws ReceiptNotClosedException {
         if (!isOpen)

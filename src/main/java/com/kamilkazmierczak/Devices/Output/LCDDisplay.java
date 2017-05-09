@@ -14,8 +14,11 @@ public class LCDDisplay extends TextOutputDevice{
 
     @Override
     public String print(String data){
-        System.out.println("lcd:"+data);
-        return "lcd:"+data;
+//        data = "---LCD---" + System.getProperty("line.separator")
+//                + data + System.getProperty("line.separator");
+//        System.out.println(data);
+//        return data;
+        return super.customizedPrint(data,"LCD");
     }
 
 

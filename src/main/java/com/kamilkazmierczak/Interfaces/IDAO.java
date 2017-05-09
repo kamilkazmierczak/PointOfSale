@@ -5,15 +5,10 @@ package com.kamilkazmierczak.Interfaces;
  */
 public interface IDAO {
 
-    //to remove
-    Iterable<IProduct> getAllProducts();
-    Iterable<IBarCode> getAllBarCodes();
-
     IBarCode createBarCode();
     IProduct createProduct(String name, double price);
 
     IProduct getProduct(IBarCode code);
 
-
-    boolean addProduct(IProduct product);
+    void addProduct(IProduct product);
 }
