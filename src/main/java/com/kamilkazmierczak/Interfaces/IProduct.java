@@ -5,7 +5,10 @@ package com.kamilkazmierczak.Interfaces;
  */
 public interface IProduct {
     String getName();
+
     double getPrice();
+
     IBarCode getBarCode();
+
     void setBarCode(IBarCode barCode);
 }

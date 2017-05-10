@@ -1,10 +1,7 @@
 package com.kamilkazmierczak.Devices.Input;
 
 import com.kamilkazmierczak.DAO.BO.BarCode;
-import com.kamilkazmierczak.DAO.BO.Product;
 import com.kamilkazmierczak.DAO.DAO;
-import com.kamilkazmierczak.DataBase.DataBase;
-import com.kamilkazmierczak.Devices.Output.LCDDisplay;
 import com.kamilkazmierczak.Interfaces.IBarCode;
 import com.kamilkazmierczak.Interfaces.IProduct;
 import org.junit.Before;

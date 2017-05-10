@@ -9,11 +9,11 @@ import com.kamilkazmierczak.Interfaces.IScanner;
 /**
  * Created by Kamil on 06.05.2017.
  */
-public class Scanner implements IScanner{
+public class Scanner implements IScanner {
 
     private IDAO dao;
 
-    public Scanner(){
+    public Scanner() {
         dao = new DAO();
     }
 

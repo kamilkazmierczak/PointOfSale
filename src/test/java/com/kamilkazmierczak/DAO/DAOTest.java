@@ -3,7 +3,6 @@ package com.kamilkazmierczak.DAO;
 import com.kamilkazmierczak.DAO.BO.BarCode;
 import com.kamilkazmierczak.DAO.BO.Product;
 import com.kamilkazmierczak.Exceptions.BarCodeAlreadyAssigned;
-import com.kamilkazmierczak.Exceptions.ReceiptNotClosedException;
 import com.kamilkazmierczak.Interfaces.IBarCode;
 import com.kamilkazmierczak.Interfaces.IProduct;
 import org.junit.Before;

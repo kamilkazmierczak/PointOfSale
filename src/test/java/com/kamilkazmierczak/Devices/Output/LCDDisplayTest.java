@@ -1,6 +1,6 @@
 package com.kamilkazmierczak.Devices.Output;
 
-import com.kamilkazmierczak.Model.Receipt;
+import com.kamilkazmierczak.Configuration.TextConstants;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,21 +11,25 @@ import static org.junit.Assert.*;
  */
 public class LCDDisplayTest {
 
-    private LCDDisplay lcdDisplay= null;
+    private LCDDisplay lcdDisplay = null;
 
     @Before
     public void setUp() throws Exception {
-        lcdDisplay= new LCDDisplay();
+        lcdDisplay = new LCDDisplay();
     }
+
     @Test
     public void ShouldPrint() throws Exception {
-        String textData = "lcd"+System.lineSeparator()+"text"+System.lineSeparator()+"lololo";
+        String textData = "lcd" + System.lineSeparator() + "text" + System.lineSeparator() + "test";
         String output = lcdDisplay.print(textData);
-        String outputHeader = output.substring(0,"---LCD---".length());
-        String outputWithoutHeader = output.substring("---LCD---".length()+System.lineSeparator().length(),output.length()-System.lineSeparator().length());
+        String header = TextConstants.TEXT_OUTPUT_INDICATOR + TextConstants.LCD + TextConstants.TEXT_OUTPUT_INDICATOR;
+        String outputHeader = output.substring(0, header.length());
+        String outputWithoutHeader = output.substring(
+                header.length() + System.lineSeparator().length(),
+                output.length() - System.lineSeparator().length()
+        );
 
-        assertEquals(outputWithoutHeader,textData);
-        assertEquals("---LCD---",outputHeader);
+        assertEquals(outputWithoutHeader, textData);
+        assertEquals(header, outputHeader);
     }
-
 }

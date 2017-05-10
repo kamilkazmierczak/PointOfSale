@@ -12,21 +12,22 @@ import java.util.Map;
 public class DataBase {
 
     private static DataBase instance = new DataBase();
+
     public static DataBase getInstance() {
         return instance;
     }
 
-    private Map<IBarCode,IProduct> productsDataSet;
+    private Map<IBarCode, IProduct> productsDataSet;
 
-    private DataBase(){
+    private DataBase() {
         productsDataSet = new HashMap<>();
     }
 
-    public void addProduct(IProduct product){
-        this.productsDataSet.put(product.getBarCode(),product);
+    public void addProduct(IProduct product) {
+        this.productsDataSet.put(product.getBarCode(), product);
     }
 
-    public Map<IBarCode,IProduct> getProductsDataSet(){
+    public Map<IBarCode, IProduct> getProductsDataSet() {
         return productsDataSet;
     }
 

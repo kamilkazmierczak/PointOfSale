@@ -9,8 +9,12 @@ import java.util.Map;
  */
 public interface IReceipt {
     double getTotalSum() throws ReceiptNotClosedException;
+
     void addProduct(IProduct product);
+
     Map<IProduct, Integer> getAllProducts();
+
     void closeReceipt();
+
     boolean isOpen();
 }

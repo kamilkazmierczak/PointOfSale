@@ -4,7 +4,6 @@ import com.kamilkazmierczak.DAO.BO.BarCode;
 import com.kamilkazmierczak.DAO.BO.Product;
 import com.kamilkazmierczak.Exceptions.ReceiptNotClosedException;
 import com.kamilkazmierczak.Interfaces.IProduct;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 

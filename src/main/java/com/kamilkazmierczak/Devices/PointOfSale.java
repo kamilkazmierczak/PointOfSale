@@ -1,5 +1,6 @@
 package com.kamilkazmierczak.Devices;
 
+import com.kamilkazmierczak.Configuration.TextConstants;
 import com.kamilkazmierczak.DAO.BO.Product;
 import com.kamilkazmierczak.Devices.Input.Scanner;
 import com.kamilkazmierczak.Devices.Output.LCDDisplay;
@@ -21,8 +22,6 @@ public class PointOfSale implements IPointOfSale {
     private TextOutputDevice display;
     private IReceipt receipt;
     private boolean isTransactionInProgress;
-
-    //TODO add text to ResourseBoundle
 
     public PointOfSale() {
         scanner = new Scanner();
@@ -54,24 +53,23 @@ public class PointOfSale implements IPointOfSale {
             this.beginTransaction();
 
         if (barCode == null) {
-            display.print("Invalid bar-code");
+            display.print(TextConstants.INVALID_BARCODE);
         } else {
             IProduct product = scanner.scanAndGetProduct(barCode);
             if (product != null) {
-                display.print(product.getName() + ";" + product.getPrice());
+                display.print(product.getName() + TextConstants.PRICE_SEPARATOR + product.getPrice());
                 receipt.addProduct(product);
             } else {
-                display.print("Product not found");
+                display.print(TextConstants.PRODUCT_NOT_FOUND);
             }
         }
     }
 
-
     @Override
     public void inputText(String text) {
-        if (text.equals("exit")) {
+        if (text.equals(TextConstants.EXIT)) {
             if (!isTransactionInProgress) {
-                display.print("Nothing to exit"); //TODO remove?
+                display.print(TextConstants.NOTHING_TO_EXIT);
             } else {
                 receipt.closeReceipt();
                 this.printReceipt(receipt);
@@ -88,8 +86,8 @@ public class PointOfSale implements IPointOfSale {
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();
             Product product = (Product) pair.getKey();
-            textReceipt += (product.getName() + " price:" + product.getPrice() + " Q= " + pair.getValue());
-            textReceipt += System.getProperty("line.separator");
+            textReceipt += (product.getName() + TextConstants.PRICE_SEPARATOR + product.getPrice() + TextConstants.QUANTITY + pair.getValue());
+            textReceipt += System.lineSeparator();
             it.remove();
         }
 
@@ -97,13 +95,12 @@ public class PointOfSale implements IPointOfSale {
         try {
             totalSum = receipt.getTotalSum();
         } catch (ReceiptNotClosedException e) {
-            display.print("Receipt must be closed to get Total Sum");
+            display.print(TextConstants.RECEIPT_NOT_CLOSED_INFO);
             return;
         }
 
-        textReceipt += "Total: " + totalSum;
-
-        display.print("Total: " + totalSum);
+        textReceipt += TextConstants.TOTAL + totalSum;
+        display.print(TextConstants.TOTAL + totalSum);
         printer.print(textReceipt);
 
     }

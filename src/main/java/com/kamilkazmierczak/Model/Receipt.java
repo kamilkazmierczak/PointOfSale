@@ -5,6 +5,7 @@ import com.kamilkazmierczak.Interfaces.IProduct;
 import com.kamilkazmierczak.Interfaces.IReceipt;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -22,7 +23,7 @@ public class Receipt implements IReceipt {
         id = idCounter.incrementAndGet();
         currentSum = 0;
         isOpen = true;
-        products = new HashMap<>();
+        products = new LinkedHashMap<>();
     }
 
     public long getId() {
@@ -32,7 +33,7 @@ public class Receipt implements IReceipt {
     @Override
     public double getTotalSum() throws ReceiptNotClosedException {
         if (!isOpen)
-            return currentSum;
+            return  Math.round(currentSum*100.0)/100.0;
         else throw new ReceiptNotClosedException();
     }
 
@@ -44,7 +45,7 @@ public class Receipt implements IReceipt {
             Integer oldQuantity = products.get(product);
             products.put(product, ++oldQuantity);
         }
-        currentSum += product.getPrice();
+        currentSum +=  product.getPrice();
     }
 
     @Override

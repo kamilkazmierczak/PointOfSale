@@ -8,6 +8,7 @@ import com.kamilkazmierczak.Exceptions.BarCodeAlreadyAssigned;
 public interface IDAO {
 
     IBarCode createBarCode();
+
     IProduct createProduct(String name, double price);
 
     IProduct getProduct(IBarCode code);

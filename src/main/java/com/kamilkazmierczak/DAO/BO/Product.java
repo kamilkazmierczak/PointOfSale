@@ -6,15 +6,15 @@ import com.kamilkazmierczak.Interfaces.IProduct;
 /**
  * Created by Kamil on 06.05.2017.
  */
-public class Product implements IProduct{
+public class Product implements IProduct {
     private String name;
     private double price;
     private IBarCode barCode;
 
 
-    public Product(String name, double price, IBarCode barCode){
+    public Product(String name, double price, IBarCode barCode) {
         this.name = name;
-        this.price = price;
+        this.price = Math.round(price*100.0)/100.0;
         this.barCode = barCode;
     }
 
@@ -24,7 +24,7 @@ public class Product implements IProduct{
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        this.price = Math.round(price*100.0)/100.0;
     }
 
     @Override

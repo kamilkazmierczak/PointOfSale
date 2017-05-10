@@ -1,5 +1,6 @@
 package com.kamilkazmierczak.Devices.Output;
 
+import com.kamilkazmierczak.Configuration.TextConstants;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,20 +10,25 @@ import static org.junit.Assert.*;
  * Created by Kamil on 09.05.2017.
  */
 public class PrinterTest {
-    private Printer printer= null;
+    private Printer printer = null;
 
     @Before
     public void setUp() throws Exception {
-        printer= new Printer();
+        printer = new Printer();
     }
+
     @Test
     public void ShouldPrint() throws Exception {
-        String textData = "printer"+System.lineSeparator()+"text"+System.lineSeparator()+"lolo";
+        String textData = "printer" + System.lineSeparator() + "text" + System.lineSeparator() + "test";
         String output = printer.print(textData);
-        String outputHeader = output.substring(0,"---PRINTER---".length());
-        String outputWithoutHeader = output.substring("---PRINTER---".length()+System.lineSeparator().length(),output.length()-System.lineSeparator().length());
+        String header = TextConstants.TEXT_OUTPUT_INDICATOR + TextConstants.PRINTER + TextConstants.TEXT_OUTPUT_INDICATOR;
+        String outputHeader = output.substring(0, header.length());
+        String outputWithoutHeader = output.substring(
+                header.length() + System.lineSeparator().length(),
+                output.length() - System.lineSeparator().length()
+        );
 
-        assertEquals(outputWithoutHeader,textData);
-        assertEquals("---PRINTER---",outputHeader);
+        assertEquals(outputWithoutHeader, textData);
+        assertEquals(header, outputHeader);
     }
 }
