@@ -35,7 +35,10 @@ public class ReceiptTest {
         receipt.addProduct(product2);
         receipt.closeReceipt();
 
-        assertEquals(2 * productPrice + product2Price, receipt.getTotalSum(), 0);
+        double totalSum = 2 * productPrice + product2Price;
+        totalSum = Math.round(totalSum*100.0)/100.0;
+
+        assertEquals(totalSum, receipt.getTotalSum(), 0);
     }
 
     @Test(expected=ReceiptNotClosedException.class)

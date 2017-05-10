@@ -16,7 +16,7 @@ public class Main {
 
         IDAO dao = new DAO();
         IProduct product1 = dao.createProduct("Product1", 1.41);
-        IProduct product2 = dao.createProduct("Product2", 7.50);
+        IProduct product2 = dao.createProduct("Product2", 7.5);
         IProduct product3 = dao.createProduct("Product3", 12.99);
         IProduct product4 = dao.createProduct("Product4", 591.43);
 

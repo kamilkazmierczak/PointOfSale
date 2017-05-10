@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42c0201e-dd7d-4bc9-a3b8-ffd54a3fdb24" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/DAO/BO/BarCode.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/DAO/BO/BarCode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/DAO/BO/Product.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/DAO/BO/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/DataBase/DataBase.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/DataBase/DataBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Devices/Input/Scanner.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Devices/Input/Scanner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Devices/Output/LCDDisplay.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Devices/Output/LCDDisplay.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Devices/Output/Printer.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Devices/Output/Printer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Devices/Output/TextOutputDevice.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Devices/Output/TextOutputDevice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Devices/PointOfSale.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Devices/PointOfSale.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Exceptions/ReceiptNotClosedException.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Exceptions/ReceiptNotClosedException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Interfaces/IDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Interfaces/IDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Interfaces/IPointOfSale.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Interfaces/IPointOfSale.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Interfaces/IProduct.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Interfaces/IProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Interfaces/IReceipt.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Interfaces/IReceipt.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Model/Receipt.java" afterPath="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Model/Receipt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/DAO/DAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/DAO/DAOTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/Input/ScannerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/Input/ScannerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/Output/LCDDisplayTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/Output/LCDDisplayTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/Output/PrinterTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/Output/PrinterTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/PointOfSaleTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/PointOfSaleTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Model/ReceiptTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Model/ReceiptTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -60,8 +40,8 @@
       <file leaf-file-name="PointOfSaleTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/PointOfSaleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1271">
-              <caret line="38" column="46" lean-forward="false" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+            <state relative-caret-position="327">
+              <caret line="99" column="51" lean-forward="true" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReceiptTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReceiptTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Model/ReceiptTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+            <state relative-caret-position="276">
+              <caret line="40" column="57" lean-forward="true" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,7 +74,7 @@
       <file leaf-file-name="DAOTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/DAO/DAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="527">
               <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -130,7 +110,7 @@
       <file leaf-file-name="ScannerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/Input/ScannerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-115">
+            <state relative-caret-position="-64">
               <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -139,11 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
+            <state relative-caret-position="442">
+              <caret line="38" column="41" lean-forward="true" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -202,7 +182,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Exceptions/BarCodeAlreadyAssigned.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/DAO/DAO.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Model/ReceiptTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/Input/ScannerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/DAO/DAOTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/DAO/BO/ProductTest.java" />
@@ -226,6 +205,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/DAO/BO/Product.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/PointOfSaleTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Devices/PointOfSale.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Model/ReceiptTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Main.java" />
       </list>
     </option>
@@ -891,7 +871,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All Tests">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="com.kamilkazmierczak.Main" />
@@ -1318,17 +1298,11 @@
       <workItem from="1494084114198" duration="27740000" />
       <workItem from="1494270027740" duration="16478000" />
       <workItem from="1494353156915" duration="24120000" />
-      <workItem from="1494417896222" duration="5133000" />
+      <workItem from="1494417896222" duration="5917000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests - 2017.05.10 at 15h 18m 37s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Tests - 2017.05.10 at 15h 19m 15s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_Tests - 2017.05.10 at 15h 20m 47s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
@@ -1353,9 +1327,15 @@
     <history-entry file="All_Tests - 2017.05.10 at 15h 30m 41s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_Tests - 2017.05.10 at 15h 50m 46s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Tests - 2017.05.10 at 15h 51m 22s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73998000" />
+    <option name="totallyTimeSpent" value="74782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1703,14 +1683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/DAO/BO/BarCodeTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1729,7 +1701,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/DAO/DAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="527">
           <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1749,7 +1721,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/Input/ScannerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-115">
+        <state relative-caret-position="-64">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1777,8 +1749,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Devices/PointOfSaleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1271">
-          <caret line="38" column="46" lean-forward="false" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+        <state relative-caret-position="327">
+          <caret line="99" column="51" lean-forward="true" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1787,11 +1759,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/kamilkazmierczak/Model/ReceiptTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        <state relative-caret-position="276">
+          <caret line="40" column="57" lean-forward="true" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/kamilkazmierczak/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="38" column="41" lean-forward="true" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
